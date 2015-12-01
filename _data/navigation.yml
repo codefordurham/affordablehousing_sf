@@ -1,0 +1,11 @@
+- text: 'Categories'
+  url: /categories/
+  actual: /categories/index.html
+  layout: category
+- text: Data Browser
+  url: /data-browser/
+  actual: /data-browser/index.html
+  layout: data
+- text: About
+  url: /about/
+  actual: /about/index.html
