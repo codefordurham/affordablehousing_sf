@@ -1,0 +1,214 @@
+title: Data Hub
+description: Describe your site here and you can use the site.description variable to use it in places like your footer.
+beta: false
+
+baseurl: ''
+permalink:	/:categories/:title
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+gems:
+- jekyll-sitemap
+
+sass:
+  style: :compressed
+
+prose:
+  siteurl: 'http://housing.datasf.org'
+  media: 'assets/images'
+  metadata:
+    data-browser/_posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "data"
+      - name: "category"
+        field:
+          element: "select"
+          label: "Category"
+          options: "http://housing.datasf.org/api/categories.jsonp?callback=categoriesCallback"
+          alterable: true
+          placeholder: "Choose"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Title"
+          help: "The title will show up in the lefthand navigation"
+      - name: "chart-title"
+        field:
+          element: "text"
+          label: "Chart Title"
+          help: "This title will show up above the chart"
+      - name: "data"
+        field:
+          element: "text"
+          label: "Data Source Link"
+          help: "Enter the link to the data source here. If it is stored in the data folder of this site, please just enter the full filename only."
+      - name: "column"
+        field:
+          element: "text"
+          label: "Data Column"
+          help: "Enter the column name that you would either like to map or categorize your chart data by."
+      - name: "type"
+        field:
+          label: "Visualization Type"
+          help: "Select the type of visualization you would like to relate to the data source"
+          element: "select"
+          options:
+            - name: 'Area Chart'
+              value: 'area'
+            - name: 'Bar Chart'
+              value: 'bar'
+            - name: 'Horizontal Bar Chart'
+              value: 'bar-horizontal'
+            - name: 'Line Chart'
+              value: 'line'
+            - name: 'Step Chart'
+              value: 'step'
+            - name: 'Pie Chart'
+              value: 'pie'
+            - name: 'Donut Chart'
+              value: 'donut'
+            - name: 'Map: Choropleth'
+              value: 'map'
+            - name: 'Map: Point'
+              value: 'map-point'
+      - name: "scale"
+        field:
+          element: "text"
+          label: "Number of data categories"
+          help: "This is used to calculate the number of buckets for choropleth maps."
+          value: "5"
+      - name: "colors"
+        field:
+          element: select
+          label: "Choropleth Colors"
+          help: "If this dataset should be displayed in a map, specify the choropleth color ramp. These are based on colorbrewer color profiles."
+          options:
+            - name: 'Yellow-Green'
+              value: 'YlGn'
+            - name: 'Yellow-Green-Blue'
+              value: 'YlGnBu'
+            - name: 'Green-Blue'
+              value: 'GnBu'
+            - name: 'Blue-Green'
+              value: 'BuGn'
+            - name: 'Purple-Blue-Green'
+              value: 'PuBuGn'
+            - name: 'Purble-Blue'
+              value: 'PuBu'
+            - name: 'Blue-Purple'
+              value: 'BuPu'
+            - name: 'Red-Purple'
+              value: 'RdPu'
+            - name: 'Purple-Red'
+              value: 'PuRd'
+            - name: 'Orange-Red'
+              value: 'OrRd'
+            - name: 'Yellow-Orange-Red'
+              value: 'YlOrRd'
+            - name: 'Yellow-Orange-Brown'
+              value: 'YlOrBr'
+            - name: 'Purples'
+              value: 'Purples'
+            - name: 'Blues'
+              value: 'Blues'
+            - name: 'Greens'
+              value: 'Greens'
+            - name: 'Oranges'
+              value: 'Oranges'
+            - name: 'Reds'
+              value: 'Reds'
+            - name: 'Greys'
+              value: 'Greys'
+            - name: 'Diverging: Purple-Orange'
+              value: 'PuOr'
+            - name: 'Diverging: BrBG'
+              value: 'BrBG'
+            - name: 'Diverging: PiYG'
+              value: 'PiYG'
+            - name: 'Diverging: RdBu'
+              value: 'RdBu'
+            - name: 'Diverging: RdGy'
+              value: 'RdGy'
+            - name: 'Diverging: RdYlBu'
+              value: 'RdYlBu'
+            - name: 'Diverging: Spectral'
+              value: 'Spectral'
+            - name: 'Diverging: RdYlGn'
+              value: 'RdYlGn'
+            - name: 'Qualitative: Accent'
+              value: 'Accent'
+            - name: 'Qualitative: Dark2'
+              value: 'Dark2'
+            - name: 'Qualitative: Paired'
+              value: 'Paired'
+            - name: 'Qualitative: Pastel1'
+              value: 'Pastel1'
+            - name: 'Qualitative: Pastel2'
+              value: 'Pastel2'
+            - name: 'Qualitative: Set1'
+              value: 'Set1'
+            - name: 'Qualitative: Set2'
+              value: 'Set2'
+            - name: 'Qualitative: Set3'
+              value: 'Set3'
+      - name: "axisType"
+        field:
+          element: "select"
+          label: "Axis Type"
+          help: 'The chart needs to know if your x-axis is a special type. In general, it is fine to keep the default.'
+          options:
+            - name: 'Automatic'
+              value: ''
+            - name: 'Category'
+              value: 'category'
+            - name: 'Time Series'
+              value: 'timeseries'
+      - name: "yFormat"
+        field:
+          element: "select"
+          label: "Y Format"
+          options:
+            - name: "None"
+              value: ""
+            - name: "$x"
+              value: "$,"
+            - name: "x,xxx"
+              value: ","
+      - name: "units"
+        field:
+          element: "text"
+          label: "Unit description"
+          help: "Enter the description of the units, if displaying data on a map"
+      - name: "source"
+        field:
+          element: "text"
+          label: "Data Source Attribution"
+          help: "Where did this data come from?"
+      - name: "notes"
+        field:
+          element: "text"
+          label: "Notes"
+          help: "List any relevant notes about this datasource"
+      - name: "policy-link"
+        field:
+          element: "text"
+          label: "Policy Link"
+          help: "Provide a link to the relevant policy"
+    policies/_posts:
+      - name: 'layout'
+        field:
+          element: 'hidden'
+          value: 'policy'
+      - name: 'summary'
+        field:
+          element: 'text'
+          label: 'Summary'
+      - name: 'data-category'
+        field:
+          element: 'text'
+          label: 'Related Data Category'
+          help: 'Please indicate what category of data should show up in the embedded data browser in this policy page.'
+
+exclude: ['docs']

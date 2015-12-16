@@ -1,0 +1,53 @@
+{% assign sorted_posts = (site.posts | sort: 'title') %}
+{% assign i = 0 %}
+{% for post in sorted_posts %}
+{% assign postdir = post.path | split:"/" %}
+{% if postdir[0] == 'categories'%}
+{% assign i = i | plus:1 %}
+{% assign remainder = i | modulo:3 %}
+{% if remainder == 1 %}
+<div class="row equal">
+{% endif %}
+  <div class="col-sm-4">
+    <div class="panel panel-default panel-policies" style="position:relative;">
+        <div class="panel-body">
+         
+            <div class="col-xs-3">
+            <img src="{{site.baseurl}}/assets/images/icons/{{post.image}}" alt="Icon representing {{post.title}}" class="img-responsive" style="width: 100px; height: auto; margin-right: 20px;"/>
+            </div>
+            <div class="col-xs-9">
+               <h2 class="panel-title">
+            <a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h2>
+            {{post.summary}}
+          </div>
+        </div>
+        <div class="panel-footer clearfix">
+          <div class="ami-container ami-{{post.ami}} hover-tooltip" aria-hidden="true" role="presentation" title="{%if post.ami == 'none'%} This program/policy has no Area Median Income eligibility requirement {% else %} This program/policy covers individuals and families with incomes up to {{post.ami}}% of Area Median Income. {% endif %} {{post.note}}">
+            <div class="ami-overlay">
+              <div class="ami-overlay-element"></div>
+              <div class="ami-overlay-element"></div>
+              <div class="ami-overlay-element"></div>
+              <div class="ami-overlay-element"></div>
+            </div>
+            <div class="ami-fill ami-{{post.ami}}">
+              <div class="ami-label">{{post.ami}}%</div>
+              <div class="no-ami">No AMI Eligibility</div>
+            </div>
+            <div class="ami-lower">
+              0%
+            </div>
+            <div class="ami-upper">
+              120%
+            </div>
+          </div>
+          <!--
+          <div class="ami-lead">Area Median Income Eligibility</div>-->
+        </div>
+      <div class="target target-{{post.target}} hover-tooltip" data-toggle="tooltip" title="This policy focuses on {{post.target}} as the primary point of intervention."></div>
+    </div>
+  </div>
+{% if remainder == 0 %}
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
