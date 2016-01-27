@@ -2,8 +2,8 @@
 layout: data
 title: Applications (Ellis)
 chartTitle: Applications for the Ellis Act Housing Preference by month
-category: "Category-2"
-data: "category-2/applications_by_month.csv"
+category: "Example"
+data: "example/applications_by_month.csv"
 type: bar
 column: Month
 published: true
