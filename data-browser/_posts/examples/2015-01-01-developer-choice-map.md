@@ -2,7 +2,7 @@
 layout: data
 title: Developer choice (all projects)
 chartTitle: "All completed inclusionary projects by developer choice"
-category: "Category-3"
+category: "Example"
 data: "https://data.sfgov.org/resource/gf2u-2nfi.geojson"
 type: "map-point"
 column: section_415_declaration_label
