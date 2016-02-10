@@ -132,7 +132,7 @@ HubMap.prototype.loadData = function() {
 
     L.mapbox.accessToken = 'pk.eyJ1IjoiZGF0YXNmIiwiYSI6Ilo3bVlHRDQifQ.7gkiPnZtioL8CnCvJ5z9Bg';
     /* initialize map and extra controls */
-    $$.map = L.mapbox.map($$.options.container, 'datasf.j9b9ihf0').setView([37.767806, -122.438153], 12);
+    $$.map = L.mapbox.map($$.options.container, 'datasf.j9b9ihf0').setView([35.996618,-78.9025366], 12);
     L.control.fullscreen().addTo($$.map);
     /* add base layer: this can be abstracted further to just pass in geojson data and layer function */
     if(options.type == 'map-point') { 
