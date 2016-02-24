@@ -21,7 +21,7 @@
           {% for post in category reversed %} 
           {% if post.url %} 
           {% capture count %}{{ count | plus: '1' }}{% endcapture %}
-          <li {% if post.url == page.url %} class="active" {%endif%}><a href="{{site.baseurl}}{{post.url}}" data-content-id="{{ count }}">{{post.title}}</a>
+          <li {% if post.url == page.url %} class="active" {%endif%}><a href="{{site.github.url}}{{post.url}}" data-content-id="{{ count }}">{{post.title}}</a>
           </li>
           {% endif %} 
           {% endfor %}

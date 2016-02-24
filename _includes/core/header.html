@@ -1,6 +1,6 @@
 {% if site.beta %}
 <div class="ribbon">
-  <a href="{{site.baseurl}}/about" title="Read more about what we mean by beta">beta</a>
+  <a href="{{site.github.url}}/about" title="Read more about what we mean by beta">beta</a>
 </div>
 {% endif %}
 
@@ -35,14 +35,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{site.baseurl}}/?ref=brand">{{site.title}}</a>
+          <a class="navbar-brand" href="{{site.github.url}}/?ref=brand">{{site.title}}</a>
         </div>
         <div class="collapse navbar-collapse">
           {% unless page.layout == 'front' %}
           <ul class="nav navbar-nav navbar-right">
             {% for link in site.data.navigation %} {% assign current = nil %} {% if page.url == link.actual or page.layout == link.layout %} {% assign current = 'active' %} {% endif %}
             <li class="{% if forloop.first %}first{% endif %} {{ current }} {% if forloop.last %}last{% endif %}">
-              <a class="{{ current }}" href="{{site.baseurl}}{{ link.url }}">{{ link.text }}</a>
+              <a class="{{ current }}" href="{{site.github.url}}{{ link.url }}">{{ link.text }}</a>
             </li>
             {% endfor %}
           </ul>
@@ -54,7 +54,7 @@
 </div>
 {% assign dir = page.path | split:"/" %}
 <header>
-  <div class="container-fluid masthead {{ dir[0] }} {% if page.isFront %} home {% endif %}" style="background: #333 {%if page.image%} url({{site.baseurl}}/assets/images/{{page.image}}) 50% 50% no-repeat{%endif%};">
+  <div class="container-fluid masthead {{ dir[0] }} {% if page.isFront %} home {% endif %}" style="background: #333 {%if page.image%} url({{site.github.url}}/assets/images/{{page.image}}) 50% 50% no-repeat{%endif%};">
     <div class="darkener"></div>
     {% if page.isFront %}
     <div class="container">

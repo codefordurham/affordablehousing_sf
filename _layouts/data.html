@@ -19,7 +19,7 @@ image: timeless_books.jpg
         </div>
         <div class="col-md-5 action-links">
           {% if site.data.categories[1].categories contains policy %}
-          <a href="{{site.baseurl}}/policies/{{ page.category | downcase }}" title="Read more about this policy">
+          <a href="{{site.github.url}}/policies/{{ page.category | downcase }}" title="Read more about this policy">
             <button type="button" style="width:100%" class="btn btn-primary btn-lightblue btn-lg btn-block action-links-read-more">Read more about this policy</button>
           </a>
           {% endif %} {% if page.portalID %}

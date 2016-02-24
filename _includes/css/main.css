@@ -762,11 +762,11 @@ a.definition:hover, a.definition:focus {
 }
 
 .target-people {
-  background: #a5b3c3 url({{site.baseurl}}/assets/images/icons/people-cutout.png) center no-repeat;
+  background: #a5b3c3 url({{site.github.url}}/assets/images/icons/people-cutout.png) center no-repeat;
 }
 
 .target-units {
-  background: #a5b3c3 url({{site.baseurl}}/assets/images/icons/units-cutout.png) center no-repeat;
+  background: #a5b3c3 url({{site.github.url}}/assets/images/icons/units-cutout.png) center no-repeat;
 }
 
 .phase div.well {
