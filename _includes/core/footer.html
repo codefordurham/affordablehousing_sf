@@ -8,7 +8,7 @@
         <ul class="list-unstyled">
           {% for link in site.data.navigation %}
           <li class="{% if forloop.first %}first{% endif %} {% if forloop.last %}last{% endif %}">
-            <a href="{{site.baseurl}}{{ link.url }}">{{ link.text }}</a>
+            <a href="{{site.github.url}}{{ link.url }}">{{ link.text }}</a>
           </li>
           {% endfor %}
         </ul>
