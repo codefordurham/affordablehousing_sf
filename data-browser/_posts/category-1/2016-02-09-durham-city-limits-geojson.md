@@ -3,7 +3,7 @@ layout: data
 title: Durham City Limits
 chartTitle: Durham City Limits
 category: "Category-1"
-data: "category-1/durham_city_limits.json"
+data: "Category-1/durham_city_limits.json"
 type: map
 scale: "14"
 published: true

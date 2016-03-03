@@ -3,7 +3,7 @@ layout: data
 title: Housing Units And Population
 chartTitle: Housing Units and Population by Year
 category: "Category-1"
-data: "category-1/HousingUnits_Population.csv"
+data: "Category-1/HousingUnits_Population.csv"
 type: bar
 column: Year
 published: true

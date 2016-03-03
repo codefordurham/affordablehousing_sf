@@ -4,7 +4,7 @@
   {% for cat in group.categories %}
   {% assign category = site.categories[cat] %}
   {% assign matchCat = cat %}
-  {% assign pageCatLower = page.category | downcase %}
+  {% assign pageCatLower = page.category %}
   <div class="panel panel-default">
     <div class="panel-heading">
       <a data-toggle="collapse" data-parent="#accordion" href="#{{ cat replace: ' ','-' }}">

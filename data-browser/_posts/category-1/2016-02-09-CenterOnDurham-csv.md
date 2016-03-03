@@ -3,7 +3,7 @@ layout: data
 title: Map Centering on Durham
 chartTitle: Map Centering on Durham
 category: "Category-1"
-data: "category-1/CenterOnDurham.csv"
+data: "Category-1/CenterOnDurham.csv"
 type: map-point
 scale: "14"
 published: true
